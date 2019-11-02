@@ -23,7 +23,8 @@ from torchvision.ops import nms
 from utils.timer import Timer
 import matplotlib.pyplot as plt
 import numpy as np
-import os, cv2
+import os
+import cv2
 import argparse
 
 from nets.vgg16 import vgg16
@@ -143,7 +144,7 @@ if __name__ == '__main__':
     demonet = args.demo_net
     dataset = args.dataset
     saved_model = os.path.join(
-        'output', demonet, DATASETS[dataset][0], 'default',
+        '../output', demonet, DATASETS[dataset][0], 'default',
         NETS[demonet][0] % (70000 if dataset == 'pascal_voc' else 110000))
 
     if not os.path.isfile(saved_model):
