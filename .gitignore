@@ -1,6 +1,7 @@
 *.so
 *.pyc
 *.ipynb_checkpoints
+*.tar
 output
 tensorboard
 lib/build
@@ -9,3 +10,5 @@ lib/pycocotools/_mask.c
 lib/pycocotools/_mask.so
 lib/faster_rcnn.egg-info
 .idea
+data/coco/
+

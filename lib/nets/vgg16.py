@@ -7,8 +7,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from nets.network import Network
-from model.config import cfg
+from lib.nets.network import Network
+from lib.model.config import cfg
 
 import torch
 import torch.nn as nn

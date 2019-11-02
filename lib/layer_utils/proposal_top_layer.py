@@ -8,8 +8,8 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from model.config import cfg
-from model.bbox_transform import bbox_transform_inv, clip_boxes
+from lib.model.config import cfg
+from lib.model.bbox_transform import bbox_transform_inv, clip_boxes
 import numpy.random as npr
 
 import torch

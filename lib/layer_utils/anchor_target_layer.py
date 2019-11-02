@@ -9,11 +9,11 @@ from __future__ import division
 from __future__ import print_function
 
 import os
-from model.config import cfg
+from lib.model.config import cfg
 import numpy as np
 import numpy.random as npr
-from utils.bbox import bbox_overlaps
-from model.bbox_transform import bbox_transform
+from lib.utils.bbox import bbox_overlaps
+from lib.model.bbox_transform import bbox_transform
 import torch
 
 

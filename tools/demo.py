@@ -14,23 +14,24 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import _init_paths
-from model.config import cfg
-from model.test import im_detect
+# import tools._init_paths
+from lib.model.config import cfg
+from lib.model.test import im_detect
 
 from torchvision.ops import nms
 
-from utils.timer import Timer
+from lib.utils.timer import Timer
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 import cv2
 import argparse
 
-from nets.vgg16 import vgg16
-from nets.resnet_v1 import resnetv1
+from lib.nets.vgg16 import vgg16
+from lib.nets.resnet_v1 import resnetv1
 
 import torch
+
 
 CLASSES = ('__background__', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle',
            'bus', 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse',
