@@ -1,17 +1,57 @@
 # Important notice:
-If you used the master branch before Sep. 26 2017 and its corresponding pretrained model, **PLEASE PAY ATTENTION**:
-The old master branch in now under old_master, you can still run the code and download the pretrained model, but the pretrained model for that old master is not compatible to the current master!
+If you used the master branch before Sep. 26 2017
+and its corresponding pre-trained model,
+**PLEASE PAY ATTENTION**:
+The old master branch in now under old_master,
+you can still run the code and download the pre-trained model,
+but the pre-trained model for that old master is not compatible
+to the current master!
 
-The main differences between new and old master branch are in this two commits: [9d4c24e](https://github.com/ruotianluo/pytorch-faster-rcnn/commit/9d4c24e83c3e4ec33751e50d5e4d8b1dd793dfaa), [c899ce7](https://github.com/ruotianluo/pytorch-faster-rcnn/commit/c899ce70dae62e3db1a5805eda96df88e4b59ca6)
-The change is related to this [issue](https://github.com/ruotianluo/pytorch-faster-rcnn/issues/6); master now matches all the details in [tf-faster-rcnn](https://github.com/endernewton/tf-faster-rcnn) so that we can now convert pretrained tf model to pytorch model.
+The main differences between new and old master branch are
+in this two commits:
+ [9d4c24e](https://github.com/ruotianluo/pytorch-faster-rcnn/commit/9d4c24e83c3e4ec33751e50d5e4d8b1dd793dfaa),
+ [c899ce7](https://github.com/ruotianluo/pytorch-faster-rcnn/commit/c899ce70dae62e3db1a5805eda96df88e4b59ca6)
+The change is related to this
+[issue](https://github.com/ruotianluo/pytorch-faster-rcnn/issues/6);
+master now matches all the details in
+[tf-faster-rcnn](https://github.com/endernewton/tf-faster-rcnn)
+so that we can now convert pretrained tf model to pytorch model.
 
 # pytorch-faster-rcnn
-A pytorch implementation of faster RCNN detection framework based on Xinlei Chen's [tf-faster-rcnn](https://github.com/endernewton/tf-faster-rcnn). Xinlei Chen's repository is based on the python Caffe implementation of faster RCNN available [here](https://github.com/rbgirshick/py-faster-rcnn).
+A pytorch implementation of faster RCNN detection framework based
+on Xinlei Chen's
+[tf-faster-rcnn](https://github.com/endernewton/tf-faster-rcnn).
+Xinlei Chen's repository is based on the python Caffe implementation
+of faster RCNN available
+[here](https://github.com/rbgirshick/py-faster-rcnn).
 
-**Note**: Several minor modifications are made when reimplementing the framework, which give potential improvements. For details about the modifications and ablative analysis, please refer to the technical report [An Implementation of Faster RCNN with Study for Region Sampling](https://arxiv.org/pdf/1702.02138.pdf). If you are seeking to reproduce the results in the original paper, please use the [official code](https://github.com/ShaoqingRen/faster_rcnn) or maybe the [semi-official code](https://github.com/rbgirshick/py-faster-rcnn). For details about the faster RCNN architecture please refer to the paper [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](http://arxiv.org/pdf/1506.01497.pdf).
+**Note**:
+Several minor modifications are made when reimplementing the framework,
+which give potential improvements.
+For details about the modifications and ablative analysis,
+please refer to the technical report
+[An Implementation of Faster RCNN with Study for Region
+Sampling](https://arxiv.org/pdf/1702.02138.pdf).
+If you are seeking to reproduce the results in the original paper,
+please use the
+[official code](https://github.com/ShaoqingRen/faster_rcnn)
+or maybe the
+[semi-official code](https://github.com/rbgirshick/py-faster-rcnn).
+For details about the faster RCNN architecture please refer to the paper
+[Faster R-CNN: Towards Real-Time Object Detection
+with Region Proposal Networks](http://arxiv.org/pdf/1506.01497.pdf).
 
 ### Detection Performance
-The current code supports **VGG16**, **Resnet V1** and **Mobilenet V1** models. We mainly tested it on plain VGG16 and Resnet101 architecture. As the baseline, we report numbers using a single model on a single convolution layer, so no multi-scale, no multi-stage bounding box regression, no skip-connection, no extra input is used. The only data augmentation technique is left-right flipping during training following the original Faster RCNN. All models are released.
+The current code supports
+**VGG16**, **Resnet V1** and **Mobilenet V1** models.
+We mainly tested it on plain **VGG16** and **Resnet101** architecture.
+As the baseline,
+we report numbers using a single model on a single convolution layer,
+so no multi-scale, no multi-stage bounding box regression,
+no skip-connection, no extra input is used.
+The only data augmentation technique is left-right flipping
+during training following the original Faster RCNN.
+All models are released.
 
 With VGG16 (``conv5_3``):
   - Train on VOC 2007 trainval and test on VOC 2007 test, **71.22**(from scratch) **70.75**(converted) (**70.8** for tf-faster-rcnn).
@@ -95,8 +135,8 @@ If you find it useful, the ``data/cache`` folder created on Xinlei's side is als
   - Google drive [here](https://drive.google.com/open?id=0B7fNdx_jAqhtNE10TDZDbFRuU0E).
 
 **(Optional)**
-Instead of downloading my pretrained or converted model, you can also convert from tf-faster-rcnn model.
-You can download the tensorflow pretrained model from [tf-faster-rcnn](https://github.com/endernewton/tf-faster-rcnn/#demo-and-test-with-pre-trained-models).
+Instead of downloading my pre-trained or converted model, you can also convert from tf-faster-rcnn model.
+You can download the tensorflow pre-trained model from [tf-faster-rcnn](https://github.com/endernewton/tf-faster-rcnn/#demo-and-test-with-pre-trained-models).
 Then run:
 ```Shell
 python tools/convert_from_tensorflow.py --tensorflow_model resnet_model.ckpt 
